@@ -9,8 +9,8 @@ from macademia import parse_utmz
         "session_counter": "44",
         "campaign_number": "2",
         "campaign_data": {
-            'campaign content': '/',
-            'campaign name': '(referral)',
+            'campaign_content': '/',
+            'campaign_name': '(referral)',
             'medium': 'referral',
             'source': 'localhost:9000',
         }
@@ -20,7 +20,8 @@ from macademia import parse_utmz
         'domain_hash': '208940939',
         'session_counter': '1',
         'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4),
-        'campaign_data': {'campaign name': '(direct)',
+        'campaign_data': {
+            'campaign_name': '(direct)',
             'medium': '(none)',
             'source': '(direct)'
         },

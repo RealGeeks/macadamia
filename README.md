@@ -16,7 +16,7 @@ pip install macademia
 >>> from macademia import parse_utmz
 >>> cookie_to_parse = "208940939.1365186784.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)"
 >>> parsed_cookie = parse_utmz(cookie_to_parse)
-{'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
+{'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign_name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
 ```
 
 

@@ -4,10 +4,10 @@ def parse_campaign_data(data):
     human_names = {
       "utmcsr": "source",
       "utmcmd": "medium",
-      "utmccn": "campaign name",
-      "utmctr": "campaign keyword",
-      "utmcct": "campaign content",
-      "utmclid": "google click ID",
+      "utmccn": "campaign_name",
+      "utmctr": "campaign_keyword",
+      "utmcct": "campaign_content",
+      "utmclid": "google_click_id",
     }
     fields = [d.split("=") for d in data.split("|")]
     info = dict((human_names[d[0]] ,d[1]) for d in fields)
