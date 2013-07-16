@@ -95,6 +95,11 @@ Sources:
   * [Python GA Cookie Parser](https://github.com/ryonlife/Python-Google-Analytics-Cookie-Parser)
   * [Official GA Cookie Documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage)
 
+## Changelog
+
+* 0.0.2: Remove accidential PyYAML dependency
+* 0.0.1: initial release
+
 ## License (MIT)
 The MIT License (MIT)
 
