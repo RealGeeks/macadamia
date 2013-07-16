@@ -1,8 +1,10 @@
 # Macademia
 
-Named after the most delicious kind of cookie (macademia nut cookies), this is a parser for Google Analytics cookies.
+![yummy]Ihttp://i.imgur.com/qWDTNcg.jpg)
 
-Really I just care about the `__utmz` cookie, so that is all that this parser can parse for now.
+Named after the most delicious kind of cookie, this is a parser for Google Analytics cookies.
+
+Really I just care about the `__utmz` cookie, so that is all that this parser can parse for now.  But if it turns out there is something interesting in the other cookies, I'll add to this parser to support them too.
 
 ## Installation
 
