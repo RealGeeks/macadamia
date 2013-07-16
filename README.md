@@ -2,7 +2,23 @@
 
 Named after the most delicious kind of cookie (macademia nut cookies), this is a parser for Google Analytics cookies.
 
-Really I just care about the `__utmz` cookie, so that is all that this parser can parse, but here is some documentation on all the cookies I have put together.
+Really I just care about the `__utmz` cookie, so that is all that this parser can parse for now.
+
+## Installation
+
+```bash
+pip install macademia
+```
+
+## Usage
+
+```python
+>>> from macademia import parse_utmz
+>>> cookie_to_parse = "208940939.1365186784.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)"
+>>> parsed_cookie = parse_utmz(cookie_to_parse)
+{'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
+```
+
 
 ###__utma Visitor Cookie (lasts 2 years)
 Used to distinguish users and sessions. The cookie is created when the javascript library executes and no existing __utma cookies exists. The cookie is updated every time data is sent to Google Analytics.
@@ -46,12 +62,12 @@ Nested Inside campaign_data are the following fields, separated by `|` character
 
 | value name | human-readable name | example values |
 | ---------- | ------------------- | -------------- |
-| utmcsr  | source | google, yahoo |
-| utmcmd  | medium | dunno |
-| utnccn  | campaign name | dunno |
-| utmctr  | campaign keyword | dunno |
-| utmcct  | campaign content | dunno |
-| utmclid | google click ID | dunno |
+| utmcsr  | source | google, yahoo, bing (if organic) or example.com if referral |
+| utmcmd  | medium | referral, organic, direct |
+| utnccn  | campaign name | (direct), (referral) |
+| utmctr  | campaign keyword | ? |
+| utmcct  | campaign content | the relative page URL of the referring site if a referral |
+| utmclid | google click ID | ? |
 
 `utmgclid` will only be set for AutoTagged AdWords visits. If set, other parameters will be unset, as utmgclid is a hash of the campaign values and is used instead.
 
