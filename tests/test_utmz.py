@@ -1,6 +1,6 @@
 import datetime
 import pytest
-from macademia import parse_utmz
+from macadamia import parse_utmz
 
 @pytest.mark.parametrize(("cookie", "expected"),[
     ("44858868.462535200.44.2.utmcsr=localhost:9000|utmccn=(referral)|utmcmd=referral|utmcct=/", {

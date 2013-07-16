@@ -18,13 +18,13 @@ class PyTest(TestCommand):
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
-setup(name='macademia',
+setup(name='macadamia',
       version='0.0.1',
       description="A parser for Google Analytics Cookies",
       author='Kevin McCarthy',
       author_email='me@kevinmccarthy.org',
-      url='https://github.com/realgeeks/macademia',
-      packages=['macademia'],
+      url='https://github.com/realgeeks/macadamia',
+      packages=['macadamia'],
       install_requires=['PyYAML'],
       license='MIT',
       tests_require=['pytest'],

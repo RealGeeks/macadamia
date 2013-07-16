@@ -1,4 +1,4 @@
-# Macademia
+# Macadamia
 
 ![yummy](http://i.imgur.com/qWDTNcg.jpg)
 
@@ -9,13 +9,13 @@ Really I just care about the `__utmz` cookie, so that is all that this parser ca
 ## Installation
 
 ```bash
-pip install macademia
+pip install macadamia
 ```
 
 ## Usage
 
 ```python
->>> from macademia import parse_utmz
+>>> from macadamia import parse_utmz
 >>> cookie_to_parse = "208940939.1365186784.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)"
 >>> parsed_cookie = parse_utmz(cookie_to_parse)
 {'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign_name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
