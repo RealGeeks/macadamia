@@ -1,6 +1,6 @@
 # Macademia
 
-![yummy]Ihttp://i.imgur.com/qWDTNcg.jpg)
+![yummy](http://i.imgur.com/qWDTNcg.jpg)
 
 Named after the most delicious kind of cookie, this is a parser for Google Analytics cookies.
 
