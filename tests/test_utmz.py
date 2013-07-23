@@ -26,6 +26,19 @@ from macadamia import parse_utmz
             'source': '(direct)'
         },
     }),
+    ("48016369.462535200.1.1.utmcsr=realgeeks.com|utmccn=(referral)|utmcmd=referral|utmcct=/clients/lee-cunningham/", {
+        'campaign_number': '1',
+        'domain_hash': '48016369',
+        'session_counter': '1',
+        "timestamp": datetime.datetime(year=1984, month=8, day=28),
+        'campaign_data': {
+            'campaign_content': '/clients/lee-cunningham/',
+            'campaign_name': '(referral)',
+            'medium': 'referral',
+            'source': 'realgeeks.com',
+        },
+    }),
+
 ])
 def test_cookie_split_and_parse(cookie, expected):
     info = parse_utmz(cookie)

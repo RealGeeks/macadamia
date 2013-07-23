@@ -21,5 +21,5 @@ def parse_utmz(cookie):
         "timestamp": datetime.datetime.fromtimestamp(int(fields[1])),
         "session_counter": fields[2],
         "campaign_number": fields[3],
-        "campaign_data": parse_campaign_data(fields[4]),
+        "campaign_data": parse_campaign_data(".".join(fields[4:])),
     }
