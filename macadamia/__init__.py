@@ -1,4 +1,5 @@
 import datetime
+import urllib2
 
 def parse_campaign_data(data):
     human_names = {
@@ -10,7 +11,7 @@ def parse_campaign_data(data):
       "utmclid": "google_click_id",
     }
     fields = [d.split("=") for d in data.split("|")]
-    info = dict((human_names[d[0]] ,d[1]) for d in fields)
+    info = dict((human_names[d[0]] ,urllib2.unquote(d[1])) for d in fields)
 
     return info
 

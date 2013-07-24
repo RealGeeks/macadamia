@@ -38,6 +38,18 @@ from macadamia import parse_utmz
             'source': 'realgeeks.com',
         },
     }),
+    ("44858868.462535200.71.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=hawaii%20real%20estate", {
+        'campaign_number': '3',
+        'domain_hash': '44858868',
+        'session_counter': '71',
+        "timestamp": datetime.datetime(year=1984, month=8, day=28),
+        'campaign_data': {
+            'campaign_keyword': 'hawaii real estate',
+            'campaign_name': '(organic)',
+            'medium': 'organic',
+            'source': 'google',
+        },
+    }),
 
 ])
 def test_cookie_split_and_parse(cookie, expected):

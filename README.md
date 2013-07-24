@@ -97,6 +97,7 @@ Sources:
 
 ## Changelog
 
+* 0.0.4: URLDecode cookie information
 * 0.0.3: Fix bug where the . in a referring domain name was causing the `campaign_data` field to be cut off
 * 0.0.2: Remove accidential PyYAML dependency
 * 0.0.1: initial release
