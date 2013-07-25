@@ -69,7 +69,7 @@ Nested Inside campaign_data are the following fields, separated by `|` character
 | utnccn  | campaign name | (direct), (referral) |
 | utmctr  | campaign keyword | ? |
 | utmcct  | campaign content | the relative page URL of the referring site if a referral |
-| utmclid | google click ID | ? |
+| utmgclid | google click ID | ? |
 
 `utmgclid` will only be set for AutoTagged AdWords visits. If set, other parameters will be unset, as utmgclid is a hash of the campaign values and is used instead.
 
@@ -97,6 +97,7 @@ Sources:
 
 ## Changelog
 
+* 0.0.5: Fix typo parsing `utmgclid` cookie value
 * 0.0.4: URLDecode cookie information
 * 0.0.3: Fix bug where the . in a referring domain name was causing the `campaign_data` field to be cut off
 * 0.0.2: Remove accidential PyYAML dependency

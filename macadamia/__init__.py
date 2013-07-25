@@ -8,7 +8,7 @@ def parse_campaign_data(data):
       "utmccn": "campaign_name",
       "utmctr": "campaign_keyword",
       "utmcct": "campaign_content",
-      "utmclid": "google_click_id",
+      "utmgclid": "google_click_id",
     }
     fields = [d.split("=") for d in data.split("|")]
     info = dict((human_names[d[0]] ,urllib2.unquote(d[1])) for d in fields)

@@ -50,6 +50,18 @@ from macadamia import parse_utmz
             'source': 'google',
         },
     }),
+    ("112962326.462535200.1.1.utmgclid=CMbMrdi_ybgCFWho7AodDyAAvQ|utmccn=(not set)|utmcmd=(not set)|utmctr=real estate for sale in wilmington nc", {
+        'campaign_number': '1',
+        'domain_hash': '112962326',
+        'session_counter': '1',
+        "timestamp": datetime.datetime(year=1984, month=8, day=28),
+        'campaign_data': {
+            'campaign_keyword': 'real estate for sale in wilmington nc',
+            'campaign_name': '(not set)',
+            'google_click_id': 'CMbMrdi_ybgCFWho7AodDyAAvQ',
+            'medium': '(not set)',
+        },
+    }),
 
 ])
 def test_cookie_split_and_parse(cookie, expected):
