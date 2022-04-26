@@ -104,6 +104,7 @@ tox
 
 ## Changelog
 
+* 0.0.6: Python 3 compatibility and add Dockerfile for development
 * 0.0.5: Fix typo parsing `utmgclid` cookie value
 * 0.0.4: URLDecode cookie information
 * 0.0.3: Fix bug where the . in a referring domain name was causing the `campaign_data` field to be cut off
