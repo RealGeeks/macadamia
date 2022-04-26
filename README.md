@@ -95,6 +95,13 @@ Sources:
   * [Python GA Cookie Parser](https://github.com/ryonlife/Python-Google-Analytics-Cookie-Parser)
   * [Official GA Cookie Documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage)
 
+## Running tests via tox and docker
+```bash
+docker build -t macadamia . && docker run -ti -v `pwd`:/opt/macadamia macadamia bash
+# then within the docker container run tox
+tox
+```
+
 ## Changelog
 
 * 0.0.5: Fix typo parsing `utmgclid` cookie value

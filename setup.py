@@ -19,7 +19,7 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 setup(name='macadamia',
-      version='0.0.5',
+      version='0.0.6',
       description="A parser for Google Analytics Cookies",
       author='Kevin McCarthy',
       author_email='me@kevinmccarthy.org',
