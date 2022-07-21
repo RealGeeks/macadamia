@@ -104,6 +104,7 @@ tox
 
 ## Changelog
 
+* 0.0.7: Actually add Python 3 compatibility and upgrade Dockerfile base image to test against Python 3.7
 * 0.0.6: Python 3 compatibility and add Dockerfile for development
 * 0.0.5: Fix typo parsing `utmgclid` cookie value
 * 0.0.4: URLDecode cookie information
