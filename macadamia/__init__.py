@@ -1,8 +1,8 @@
 import datetime
 try:
-    import urllib2 as url_library
+    from urllib2 import unquote
 except ImportError:
-    import urllib as url_library
+    from urllib.parse import unquote
 
 def parse_campaign_data(data):
     human_names = {
@@ -14,7 +14,7 @@ def parse_campaign_data(data):
       "utmgclid": "google_click_id",
     }
     fields = [d.split("=") for d in data.split("|")]
-    info = dict((human_names[d[0]] ,url_library.unquote(d[1])) for d in fields)
+    info = dict((human_names[d[0]], unquote(d[1])) for d in fields)
 
     return info
 
