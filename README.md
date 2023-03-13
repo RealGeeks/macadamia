@@ -97,9 +97,7 @@ Sources:
 
 ## Running tests via tox and docker
 ```bash
-docker build -t macadamia . && docker run -ti -v `pwd`:/opt/macadamia macadamia bash
-# then within the docker container run tox
-tox
+make test
 ```
 
 ## Changelog
