@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    working_directory: /opt/app
+    docker:
+      - image: docker:20.10.18-git
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --update --no-cache \
+              docker-compose \
+              make
+      - run:
+          name: Build image
+          command: |
+            docker-compose build
+      - run:
+          name: Run tests
+          command: |
+            make test-circle

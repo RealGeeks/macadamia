@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app: &app-base
+    build: .
+    volumes:
+      - .:/opt/macadamia
+  test-circle:
+    <<: *app-base
+    volumes: []

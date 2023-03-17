@@ -21,6 +21,12 @@ pip install macadamia
 {'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign_name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
 ```
 
+```python
+>>> from macadamia import parse_cookie
+>>> cookie_to_parse = "208940939.1365186784.1.1.fiztmcsr=(direct)|fiztmccn=(direct)|fiztmcmd=(none)"
+>>> parsed_cookie = parse_cookie(cookie_to_parse, prefix="fiztm")
+>>> {'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign_name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
+```
 
 ###__utma Visitor Cookie (lasts 2 years)
 Used to distinguish users and sessions. The cookie is created when the javascript library executes and no existing __utma cookies exists. The cookie is updated every time data is sent to Google Analytics.
@@ -97,13 +103,12 @@ Sources:
 
 ## Running tests via tox and docker
 ```bash
-docker build -t macadamia . && docker run -ti -v `pwd`:/opt/macadamia macadamia bash
-# then within the docker container run tox
-tox
+make test
 ```
 
 ## Changelog
 
+* 0.1.0: Support cookies shaped like `_utmz` but with a different name
 * 0.0.7: Actually add Python 3 compatibility and upgrade Dockerfile base image to test against Python 3.7
 * 0.0.6: Python 3 compatibility and add Dockerfile for development
 * 0.0.5: Fix typo parsing `utmgclid` cookie value
