@@ -1,4 +1,5 @@
 APP=docker-compose run --rm app
+TOX=tox
 
 update:
 	docker-compose build
@@ -7,4 +8,7 @@ update:
 	docker-compose build
 
 test:
-	$(APP) tox
+	$(APP) $(TOX)
+
+test-circle:	# run automated tests like circle-ci would
+	docker-compose run --rm test-circle $(TOX)
