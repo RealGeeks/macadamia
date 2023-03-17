@@ -1,29 +1,40 @@
 import datetime
+
 try:
     from urllib2 import unquote
 except ImportError:
     from urllib.parse import unquote
 
-def parse_campaign_data(data):
+
+def parse_campaign_data(data, prefix="utm"):
     human_names = {
-      "utmcsr": "source",
-      "utmcmd": "medium",
-      "utmccn": "campaign_name",
-      "utmctr": "campaign_keyword",
-      "utmcct": "campaign_content",
-      "utmgclid": "google_click_id",
+        "%scsr" % prefix: "source",
+        "%scmd" % prefix: "medium",
+        "%sccn" % prefix: "campaign_name",
+        "%sctr" % prefix: "campaign_keyword",
+        "%scct" % prefix: "campaign_content",
+        "%sgclid" % prefix: "google_click_id",
     }
+
     fields = [d.split("=") for d in data.split("|")]
     info = dict((human_names[d[0]], unquote(d[1])) for d in fields)
 
     return info
 
-def parse_utmz(cookie):
-    fields = cookie.split('.')
+
+def parse_cookie(cookie, prefix="utm"):
+    fields = cookie.split(".")
+
+    campaign_data = parse_campaign_data(".".join(fields[4:]), prefix=prefix)
+
     return {
         "domain_hash": fields[0],
         "timestamp": datetime.datetime.fromtimestamp(int(fields[1])),
         "session_counter": fields[2],
         "campaign_number": fields[3],
-        "campaign_data": parse_campaign_data(".".join(fields[4:])),
+        "campaign_data": campaign_data,
     }
+
+
+def parse_utmz(cookie):
+    return parse_cookie(cookie, prefix="utm")
