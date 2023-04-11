@@ -80,6 +80,21 @@ from macadamia import parse_cookie
                 },
             },
         ),
+        (
+            "fiztmgclid=CMbMrdi_ybgCFWho7AodDyAAvQ|fiztmccn=(not set)|fiztmcmd=(not set)|fiztmctr=real estate for sale in wilmington nc",
+            {
+                "campaign_number": "",
+                "domain_hash": "",
+                "session_counter": "",
+                "timestamp": "",
+                "campaign_data": {
+                    "campaign_keyword": "real estate for sale in wilmington nc",
+                    "campaign_name": "(not set)",
+                    "google_click_id": "CMbMrdi_ybgCFWho7AodDyAAvQ",
+                    "medium": "(not set)",
+                },
+            },
+        ),
     ],
 )
 def test_cookie_split_and_parse(cookie, expected):
