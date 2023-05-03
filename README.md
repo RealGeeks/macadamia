@@ -28,6 +28,10 @@ pip install macadamia
 >>> {'domain_hash': '208940939', 'campaign_number': '1', 'campaign_data': {'source': '(direct)', 'campaign_name': '(direct)', 'medium': '(none)'}, 'timestamp': datetime.datetime(2013, 4, 5, 8, 33, 4), 'session_counter': '1'}
 ```
 
+## The future of google analytics cookies
+
+Google has deprecated this cookie format and now GA4 stores a cookie incompatible with Macadamia.  If you would like to continue using Macadamia, version `0.2.0` adds support for parsing cookies created by [the included utmz cookie replicator javascript](https://github.com/RealGeeks/macadamia/blob/master/utmz-cookie.js)
+
 ###__utma Visitor Cookie (lasts 2 years)
 Used to distinguish users and sessions. The cookie is created when the javascript library executes and no existing __utma cookies exists. The cookie is updated every time data is sent to Google Analytics.
 
@@ -108,6 +112,7 @@ make test
 
 ## Changelog
 
+* 0.2.0: Support cookies missing the leading fields, as created by some `_utmz` replicator scripts.
 * 0.1.0: Support cookies shaped like `_utmz` but with a different name
 * 0.0.7: Actually add Python 3 compatibility and upgrade Dockerfile base image to test against Python 3.7
 * 0.0.6: Python 3 compatibility and add Dockerfile for development
