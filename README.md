@@ -45,7 +45,7 @@ Has the following info:
   * current_visit_at
   * session_counter
 
-###__utmb Session Cookie (lasts 30 minutes)
+### `__utmb` Session Cookie (lasts 30 minutes)
 Used to determine new sessions/visits. The cookie is created when the javascript library executes and no existing __utmb cookies exists. The cookie is updated every time data is sent to Google Analytics.
 
 Has the following fields:
@@ -56,10 +56,10 @@ Has the following fields:
 
 Each group is separated by a period character. All times stored are UNIX timestamps. The token bucket stores how many requests are being made to GA at once. This number will decrease for each request, any requests sent while the bucket is empty will be discarded.
 
-###__utmc (lasts until browser is closed)
+### `__utmc` (lasts until browser is closed)
 Deprecated.  Still set for backwards compability sometimes.
 
-###__utmz (lasts 6 months)
+### `__utmz` (lasts 6 months)
 Stores the traffic source or campaign that explains how the user reached your site. The cookie is created when the javascript library executes and is updated every time data is sent to Google Analytics.
 
 Has the following fields:
@@ -85,7 +85,7 @@ Nested Inside campaign_data are the following fields, separated by `|` character
 
 ## Rare variables
 
-###__utmv (lasts 2 years)
+### `__utmv` (lasts 2 years)
 Used to store visitor-level custom variable data. 
 
   * domain_hash
@@ -93,10 +93,10 @@ Used to store visitor-level custom variable data.
 
 Each group is separated by a period character. This cookie can only be created by using Google Analytics' deprecated _setVar() method. Calling this method sets this cookie and automa­tically sends the data to Google Analytics via a __utm.gif request.  Values sent in this manner appear in the "User Define­d" report, unless otherwise interc­epted with profile filters.
 
-###__utmx
+### `__utmx`
 Used by Website Optimizer.  Now used by "Content Experiments?"
 
-###__utmk
+### `__utmk`
 Digest hashes of utm values
 
 Sources:
@@ -125,7 +125,7 @@ make test
 ## License (MIT)
 The MIT License (MIT)
 
-Copyright (c) 2013 Kevin McCarthy
+Copyright (c) 2013-2023 Kevin McCarthy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
