@@ -1,4 +1,5 @@
 import datetime
+import re
 
 try:
     from urllib2 import unquote
@@ -23,16 +24,20 @@ def parse_campaign_data(data, prefix="utm"):
 
 
 def parse_cookie(cookie, prefix="utm"):
-    fields = cookie.split(".")
+    fields = re.search(r"^(?:(\d*)\.(\d*)\.(\d*)\.(\d*).)?(.+)$", cookie).groups()
+    fields = [field or "" for field in fields]
 
-    campaign_data = parse_campaign_data(".".join(fields[4:]), prefix=prefix)
+    if fields[1]:
+        timestamp = datetime.datetime.fromtimestamp(int(fields[1]))
+    else:
+        timestamp = ""
 
     return {
         "domain_hash": fields[0],
-        "timestamp": datetime.datetime.fromtimestamp(int(fields[1])),
+        "timestamp": timestamp,
         "session_counter": fields[2],
         "campaign_number": fields[3],
-        "campaign_data": campaign_data,
+        "campaign_data": parse_campaign_data(fields[4], prefix),
     }
 
 
